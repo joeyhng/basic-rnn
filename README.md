@@ -10,3 +10,7 @@ wget https://s3.amazonaws.com/torch7/data/mnist.t7.tgz
 tar xzf mnist.t7.tgz
 ```
 
+To run this code, run
+```
+th train_sweep.lua
+```
