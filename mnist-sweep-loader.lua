@@ -36,9 +36,9 @@ end
 
 
 function MnistSweepLoader:next_batch(split_id)
-    self.batch_idx[1] = self.batch_idx[1] % self.num_batches[split_id] + 1
-    local idx1 = (self.batch_idx[1] - 1) * self.batch_size + 1
-    local idx2 = self.batch_idx[1] * self.batch_size 
+    self.batch_idx[split_id] = self.batch_idx[split_id] % self.num_batches[split_id] + 1
+    local idx1 = (self.batch_idx[split_id] - 1) * self.batch_size + 1
+    local idx2 = self.batch_idx[split_id] * self.batch_size 
     local x = self.data_split[split_id].data:sub(idx1, idx2)
     local y = self.data_split[split_id].labels:sub(idx1, idx2)
     return x, y
